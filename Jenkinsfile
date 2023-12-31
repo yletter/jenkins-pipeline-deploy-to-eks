@@ -11,6 +11,8 @@ pipeline {
             steps {
                 script {
                     dir('terraform') {
+                        sh "env > yuvaraj.txt"
+                        sh "cat yuvaraj.txt"
                         sh "aws s3 ls"
                         sh "terraform init"
                         sh "terraform apply -auto-approve"
