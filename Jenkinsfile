@@ -15,11 +15,10 @@ options {
             steps {
                 script {
                     dir('terraform') {
-                        sh "env > yuvaraj.txt"
-                        sh "cat yuvaraj.txt"
-                        sh "aws s3 ls"
-                        sh "terraform init"
-                        sh "terraform apply -auto-approve"
+                        sh "#aws s3 ls"
+                        sh "#terraform init"
+                        sh "#terraform apply -auto-approve"
+                        sh "terraform destroy -auto-approve"
                     }
                 }
             }
