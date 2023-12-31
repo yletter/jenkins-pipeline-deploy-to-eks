@@ -18,7 +18,8 @@ options {
                         sh "#aws s3 ls"
                         sh "#terraform init"
                         sh "#terraform apply -auto-approve"
-                        sh "terraform destroy -auto-approve"
+                        sh "terraform plan"
+                        sh "#terraform destroy -auto-approve"
                     }
                 }
             }
