@@ -12,8 +12,7 @@ pipeline {
             steps {
                 script {
                     dir('terraform') {
-                        sh "env"
-                        sh "echo \$AWS_PROFILE"
+                        sh "aws s3 ls"
                         sh "terraform init"
                         sh "terraform apply -auto-approve"
                     }
